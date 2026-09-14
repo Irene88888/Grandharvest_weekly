@@ -374,9 +374,9 @@ function renderDomSummary(){
   const g = DOM.grand;
   const margin = g.totalAmt ? (g.totalProfit/g.totalAmt*100).toFixed(1) : '0';
   document.getElementById('summary-dom').innerHTML = `
-    <div class="sumcard"><div class="lbl">出貨量(26年)</div><div class="val">${fmtQty(g.totalQty)}</div></div>
-    <div class="sumcard"><div class="lbl">銷售額(26年)</div><div class="val">${fmtMoneyCcy(g.totalAmt,'TWD')}</div></div>
-    <div class="sumcard"><div class="lbl">利潤(26年)</div><div class="val">${fmtMoneyCcy(g.totalProfit,'TWD')}</div><div class="sub">毛利率 ${margin}%</div></div>
+    <div class="sumcard"><div class="lbl">出貨量(2026年)</div><div class="val">${fmtQty(g.totalQty)}</div></div>
+    <div class="sumcard"><div class="lbl">銷售額(2026年)</div><div class="val">${fmtMoneyCcy(g.totalAmt,'TWD')}</div></div>
+    <div class="sumcard"><div class="lbl">利潤(2026年)</div><div class="val">${fmtMoneyCcy(g.totalProfit,'TWD')}</div><div class="sub">毛利率 ${margin}%</div></div>
   `;
   document.getElementById('note-dom').textContent =
     `目前分頁：${META_DOM[metricDom].label}（${META_DOM[metricDom].unitNote}）｜%＝該期間較上一期間增減｜完成度＝${DOM.periodLabel}${META_DOM[metricDom].rateBase}÷2025年全年${META_DOM[metricDom].rateBase}｜若當月未滿整月，會再細分週次，各自與前一週比較｜點客戶列展開明細｜客戶數：${g.custCount} 家`;
@@ -496,9 +496,9 @@ function renderExpSummary(){
   }
   const margin = g.totalAmtTWD ? (g.totalProfit/g.totalAmtTWD*100).toFixed(1) : '0';
   document.getElementById('summary-exp').innerHTML = `
-    <div class="sumcard"><div class="lbl">出貨量(26年)</div><div class="val">${fmtQty(g.totalQty)}</div></div>
-    <div class="sumcard"><div class="lbl">銷售額(26年)</div><div class="val">${fmtMoneyCcy(g.totalAmtTWD,'TWD換算')}</div></div>
-    <div class="sumcard"><div class="lbl">利潤(26年)</div><div class="val">${fmtMoneyCcy(g.totalProfit,'TWD')}</div><div class="sub">毛利率 ${margin}%</div></div>
+    <div class="sumcard"><div class="lbl">出貨量(2026年)</div><div class="val">${fmtQty(g.totalQty)}</div></div>
+    <div class="sumcard"><div class="lbl">銷售額(2026年)</div><div class="val">${fmtMoneyCcy(g.totalAmtTWD,'TWD換算')}</div></div>
+    <div class="sumcard"><div class="lbl">利潤(2026年)</div><div class="val">${fmtMoneyCcy(g.totalProfit,'TWD')}</div><div class="sub">毛利率 ${margin}%</div></div>
   `;
   const catLabel = catFilterExp==='all' ? '全部品項' : catFilterExp;
   document.getElementById('note-exp').textContent =
